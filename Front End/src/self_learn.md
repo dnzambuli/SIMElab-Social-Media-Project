@@ -11,5 +11,5 @@ run the program in debug mode
 4.  **Constructor** -- defines a route for our application rendered at the `http://<app name>/parameter`
 
 ```python
-app.route("/") # render at '
+app.route("/") # render at 'http://<app name>/'
 ```
