@@ -1,5 +1,5 @@
 :root{
-    --bg:white,
+    --bg:white;
     --textColor: black;
     --softBg: #fdf0d5;
     --softTextColor: #003049;
@@ -19,4 +19,10 @@ body{
 a{
     color: inherit;
     text-decoration: none;
+}
+
+.container{
+   min-height: 100vh;
+   background-color: var(--bg);
+   color: var(--textColor); 
 }
