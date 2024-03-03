@@ -33,7 +33,7 @@ a{
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
-    background-color: purple;
+    background-color: var(--softBg);
     padding-left: 80px;
     padding-right: 80px;
 }
