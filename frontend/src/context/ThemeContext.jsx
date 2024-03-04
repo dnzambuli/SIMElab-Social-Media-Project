@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState} from "react";
 
 // define the states and colors for each state
 export const ThemeContext = createContext();
@@ -16,5 +16,15 @@ export const ThemeContextProvider = ({children}) => {
         return getFromLocalStorage();
     });
 
-    return <ThemeContext.Provider value={{theme}}>{children}</ThemeContext.Provider>
-}
+    const toggle = () =>{
+        setTheme(theme === "light" ? "dark" : "light");
+    };
+
+    useEffect(() =>{
+        localStorage.setItem("Theme", theme);
+    }, [theme]);
+
+    return (
+    <ThemeContext.Provider value={{theme, toggle}}>{children}</ThemeContext.Provider>
+    );
+};
