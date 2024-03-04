@@ -21,6 +21,13 @@ a{
     text-decoration: none;
 }
 
+.light{
+    --bg:#0f172a;
+    --textColor: #ddd;
+    --softBg: #ecfaf9;
+    --softTextColor: #02162e;
+}
+
 .container{
     min-height: 100vh;
     background-color: var(--bg);
@@ -33,7 +40,7 @@ a{
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--softBg);
+    /* background-color: var(--softBg); */
     padding-left: 80px;
     padding-right: 80px;
 }
