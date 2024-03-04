@@ -21,11 +21,19 @@ a{
     text-decoration: none;
 }
 
-.light{
+.dark{
     --bg:#0f172a;
     --textColor: #ddd;
     --softBg: #ecfaf9;
     --softTextColor: #02162e;
+}
+
+.links{
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    font-size: 20px;
+    align-items: centers;
 }
 
 .container{
