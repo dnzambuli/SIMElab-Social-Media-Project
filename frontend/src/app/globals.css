@@ -1,5 +1,5 @@
 :root{
-    --bg:white,
+    --bg:white;
     --textColor: black;
     --softBg: #fdf0d5;
     --softTextColor: #003049;
@@ -26,6 +26,14 @@ a{
     --textColor: #ddd;
     --softBg: #ecfaf9;
     --softTextColor: #02162e;
+}
+
+.light{
+    --bg:white;
+    --textColor: black;
+    --softBg: #fdf0d5;
+    --softTextColor: #003049;
+
 }
 
 .links{
