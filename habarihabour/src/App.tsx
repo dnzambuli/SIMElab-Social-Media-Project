@@ -4,6 +4,7 @@ import CustomNavbar from "./assets/components/Navbar";
 import CustomJumbo from "./assets/components/Jumbotron";
 import About from "./assets/components/About";
 import Features from "./assets/components/KeyFeatures";
+import ContactForm from "./assets/components/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <CustomNavbar />
       <About />
       <Features />
+      <ContactForm />
     </>
   );
 }

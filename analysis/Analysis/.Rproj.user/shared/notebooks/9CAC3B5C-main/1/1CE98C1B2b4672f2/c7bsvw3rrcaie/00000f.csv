@@ -1,0 +1,3 @@
+"0","industry_data = data.frame(national_id = content_creator$`National ID`,"
+"0","                           industry = content_creator$`Creative industry`,"
+"0","                           count = rep(1, nrow(content_creator)))"

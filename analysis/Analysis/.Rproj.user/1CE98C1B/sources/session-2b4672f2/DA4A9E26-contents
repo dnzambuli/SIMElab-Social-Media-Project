@@ -8,3 +8,528 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Data
+
+```{r}
+library(readxl)
+content_creator <- read_excel("07 03 2024 Social Media Information.xlsx")
+View(content_creator)
+```
+
+## Get the unique Fields
+
+```{r}
+unique(content_creator$`Creative industry`)
+```
+
+## Visualize the distribution
+
+```{r}
+industry_data = data.frame(national_id = content_creator$`National ID`,
+                           industry = content_creator$`Creative industry`,
+                           count = rep(1, nrow(content_creator)))
+```
+
+```{r}
+library(dplyr)
+
+industry_data = industry_data %>% group_by(industry) %>% summarise(count = sum(count))
+
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(industry_data, aes(x = industry, y = count)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "The main fields from the study",
+    x = "The creative industry",
+    y = "The number of individuals"
+  ) +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+```{r}
+Social_media_accounts = c("YouTube Instagram Facebook TikTok WhatsApp","YouTube","Facebook Instagram TikTok",
+"Instagram Facebook Twitter (X) TikTok Thread WhatsApp Telegram", "Pinterest LinkedIn","Facebook Instagram TikTok","Instagram Facebook TikTok Other","TikTok","WhatsApp","Instagram Other","Instagram TikTok WhatsApp Pinterest","Instagram","Facebook Instagram",
+"Instagram TikTok",
+"YouTube Instagram TikTok",
+"YouTube",
+"YouTube Facebook",
+"YouTube Facebook Instagram TikTok Twitter (X) WhatsApp Other",
+"Facebook Instagram TikTok Twitter (X) WhatsApp Telegram LinkedIn",
+"Instagram",
+"YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp", "Telegram LinkedIn Pinterest",
+"Instagram",
+"Instagram TikTok",
+"WhatsApp",
+"Instagram WhatsApp",
+"Instagram",
+"YouTube Facebook Instagram TikTok",
+"Facebook WhatsApp",
+"Instagram",
+"YouTube TikTok Other",
+"YouTube",
+"Instagram",
+"YouTube Facebook Instagram TikTok WhatsApp",
+"Instagram Other",
+"YouTube Facebook TikTok",
+"Instagram LinkedIn",
+"TikTok",
+"YouTube Instagram TikTok WhatsApp Other",
+"YouTube Facebook Instagram TikTok WhatsApp",
+"YouTube Facebook Instagram TikTok Other",
+"YouTube Instagram Facebook",
+"YouTube",
+"Instagram WhatsApp Pinterest",
+"YouTube WhatsApp Facebook",
+"Other WhatsApp",
+"Instagram TikTok WhatsApp YouTube",
+"YouTube Other",
+"Instagram WhatsApp",
+"YouTube Instagram TikTok Telegram Other",
+"Other",
+'YouTube Facebook',
+"Facebook Instagram",
+"YouTube Facebook Instagram TikTok Twitter(X) Thread WhatsApp", "LinkedIn Pinterest Other",
+"Instagram WhatsApp",
+"YouTube Instagram TikTok",
+"Facebook Instagram Twitter(X)",
+"WhatsApp Instagram Facebook",
+"YouTube TikTok Facebook",
+"YouTube",
+"Facebook Instagram Twitter(X) TikTok WhatsApp LinkedIn OtherPinterest",
+"YouTube Facebook Instagram TikTok Thread Twitter (X) WhatsApp Telegram LinkedIn",
+Instagram
+WhatsApp LinkedIn
+YouTube Facebook WhatsApp Instagram TikTok
+Instagram
+YouTube Instagram TikTok Twitter (X) WhatsApp
+Twitter (X) Facebook Instagram Telegram WhatsApp LinkedIn
+Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram Pinterest
+YouTube Facebook Instagram Telegram
+YouTube Facebook Instagram Twitter (X)
+TikTok Facebook Instagram YouTube WhatsApp
+Instagram Twitter (X) TikTok
+Other(specify)
+YouTube
+YouTube
+Twitter (X) Facebook TikTok
+Instagram TikTok WhatsApp
+Twitter (X) Facebook WhatsApp YouTube LinkedIn Pinterest
+Instagram
+WhatsApp YouTube Facebook Instagram TikTok
+WhatsApp
+TikTok Facebook Instagram
+Instagram YouTube
+Other(specify)
+WhatsApp
+LinkedIn WhatsApp YouTube
+Twitter (X) YouTube Instagram TikTok Thread WhatsApp LinkedIn Pinterest
+Instagram YouTube TikTok Pinterest WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram LinkedIn
+YouTube
+Instagram TikTok YouTube Facebook
+Instagram WhatsApp
+TikTok YouTube Facebook
+YouTube Instagram TikTok WhatsApp
+YouTube
+YouTube TikTok WhatsApp
+TikTok
+Instagram YouTube Other(specify)
+TikTok Instagram
+Instagram TikTok
+YouTube Facebook Instagram TikTok WhatsApp
+YouTube Instagram Twitter (X) WhatsApp Thread Pinterest
+Facebook TikTok WhatsApp
+Instagram WhatsApp Facebook Twitter (X) Thread Pinterest
+WhatsApp
+TikTok
+Instagram
+TikTok Instagram WhatsApp
+Instagram TikTok YouTube Twitter (X) WhatsApp
+Instagram Facebook Twitter (X)
+Instagram Facebook WhatsApp Twitter (X)
+Facebook TikTok Instagram WhatsApp
+YouTube
+YouTube TikTok Thread WhatsApp
+Other(specify)
+WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Telegram
+Other(specify)
+Instagram Facebook WhatsApp
+YouTube Facebook Instagram TikTok
+YouTube
+Other(specify)
+Facebook WhatsApp LinkedIn
+TikTok
+YouTube Facebook Instagram TikTok Thread WhatsApp Telegram
+TikTok Instagram
+YouTube Instagram
+WhatsApp
+Instagram
+YouTube Instagram TikTok
+Facebook Instagram TikTok
+Instagram Facebook WhatsApp
+Other(specify)
+Other(specify)
+TikTok Instagram YouTube
+YouTube Facebook Instagram TikTok WhatsApp
+YouTube Facebook Instagram WhatsApp TikTok
+Instagram TikTok WhatsApp YouTube
+YouTube TikTok WhatsApp Instagram
+YouTube Facebook Instagram Twitter (X) TikTok WhatsApp
+Instagram TikTok
+YouTube
+Instagram YouTube Facebook WhatsApp
+Instagram TikTok WhatsApp
+Other(specify)
+Twitter (X)
+YouTube Instagram
+YouTube Facebook TikTok
+Instagram Facebook LinkedIn TikTok
+TikTok YouTube Instagram Facebook
+YouTube TikTok
+YouTube Facebook Instagram
+Facebook Instagram TikTok WhatsApp
+Other(specify)
+Facebook Instagram TikTok YouTube WhatsApp
+TikTok
+YouTube Instagram TikTok Facebook Twitter (X) WhatsApp
+Facebook WhatsApp Instagram LinkedIn
+YouTube Other(specify)
+YouTube Facebook Instagram Twitter (X) TikTok Thread WhatsApp Telegram LinkedIn
+TikTok YouTube
+WhatsApp
+TikTok Facebook
+Facebook
+YouTube Facebook TikTok Twitter (X) WhatsApp
+LinkedIn WhatsApp Twitter (X) Instagram
+Facebook Instagram WhatsApp LinkedIn
+TikTok YouTube Facebook Instagram
+Instagram WhatsApp YouTube LinkedIn Twitter (X)
+Instagram TikTok WhatsApp
+YouTube WhatsApp Other(specify)
+YouTube Facebook Instagram WhatsApp
+WhatsApp Telegram TikTok Instagram Facebook
+YouTube TikTok Instagram Facebook WhatsApp Telegram Pinterest
+YouTube Facebook Instagram TikTok WhatsApp Pinterest
+Facebook TikTok YouTube WhatsApp Instagram Twitter (X)
+Instagram WhatsApp TikTok Pinterest
+YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp
+TikTok WhatsApp
+Instagram TikTok YouTube Facebook WhatsApp
+YouTube Facebook Instagram TikTok Thread WhatsApp Telegram
+Facebook Instagram TikTok WhatsApp
+Facebook Instagram WhatsApp Twitter (X)
+YouTube TikTok Instagram Facebook Other(specify)
+TikTok Facebook Instagram WhatsApp
+Instagram Facebook
+Instagram TikTok
+Instagram
+Instagram
+Facebook TikTok
+TikTok
+TikTok
+YouTube TikTok
+TikTok YouTube
+TikTok YouTube WhatsApp
+TikTok Facebook Instagram WhatsApp YouTube Other(specify)
+Instagram Facebook
+Other(specify)
+Facebook Instagram WhatsApp
+YouTube Facebook TikTok
+Other(specify)
+Instagram TikTok Facebook YouTube Twitter (X) Thread
+Facebook
+Facebook TikTok WhatsApp
+Facebook Instagram TikTok WhatsApp
+TikTok Instagram WhatsApp Facebook
+Facebook Twitter (X) Instagram TikTok WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram LinkedIn Pinterest
+YouTube Instagram TikTok WhatsApp
+YouTube Instagram TikTok Thread WhatsApp
+Instagram YouTube TikTok WhatsApp
+Instagram
+YouTube Facebook TikTok WhatsApp Twitter (X)
+TikTok
+YouTube Instagram TikTok WhatsApp
+Facebook Instagram WhatsApp
+TikTok WhatsApp Instagram
+Other(specify)
+TikTok
+TikTok Instagram WhatsApp
+Other(specify)
+Other(specify)
+TikTok YouTube Facebook
+YouTube Facebook Instagram TikTok WhatsApp
+Instagram TikTok Facebook WhatsApp
+Instagram TikTok
+YouTube TikTok Facebook
+Facebook LinkedIn Twitter (X)
+Instagram TikTok WhatsApp YouTube Telegram
+YouTube Instagram Facebook TikTok WhatsApp Twitter (X)
+YouTube Facebook Instagram TikTok WhatsApp Telegram
+Facebook WhatsApp
+Other(specify)
+YouTube Facebook
+Instagram WhatsApp Facebook
+Facebook TikTok
+Facebook TikTok WhatsApp
+WhatsApp
+YouTube
+Instagram Twitter (X) LinkedIn YouTube Facebook TikTok WhatsApp
+WhatsApp
+TikTok
+YouTube WhatsApp
+Other(specify)
+YouTube
+YouTube
+TikTok Instagram Facebook WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp
+TikTok Facebook YouTube
+Instagram TikTok
+Facebook Instagram YouTube
+YouTube Instagram TikTok Other(specify)
+TikTok Instagram YouTube WhatsApp
+TikTok
+YouTube Instagram WhatsApp Twitter (X)
+WhatsApp
+YouTube Facebook Instagram WhatsApp LinkedIn Other(specify)
+TikTok
+YouTube Facebook Instagram TikTok WhatsApp Twitter (X)
+YouTube Instagram
+Other(specify)
+Instagram TikTok YouTube
+Instagram WhatsApp TikTok
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp
+WhatsApp
+WhatsApp YouTube Instagram TikTok Facebook
+WhatsApp
+YouTube Facebook Instagram
+Twitter (X) Other(specify)
+Facebook Instagram WhatsApp
+Facebook Instagram YouTube
+TikTok YouTube
+WhatsApp
+Instagram
+YouTube Instagram TikTok WhatsApp
+Facebook TikTok Instagram YouTube WhatsApp
+Other(specify)
+WhatsApp
+Other(specify) YouTube
+Instagram YouTube WhatsApp
+Facebook Instagram TikTok WhatsApp
+Instagram TikTok Facebook WhatsApp
+YouTube Facebook
+Facebook Instagram TikTok
+WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram
+YouTube TikTok
+YouTube TikTok Instagram Facebook LinkedIn WhatsApp
+Instagram
+YouTube TikTok Instagram Facebook LinkedIn WhatsApp
+Instagram TikTok WhatsApp
+Instagram Facebook YouTube WhatsApp
+Facebook Instagram TikTok WhatsApp
+YouTube Instagram TikTok
+YouTube Facebook TikTok WhatsApp
+YouTube TikTok
+Facebook TikTok WhatsApp
+Facebook TikTok
+YouTube TikTok
+Instagram Facebook Twitter (X) TikTok WhatsApp
+TikTok
+TikTok Other(specify)
+Other(specify)
+YouTube Facebook Instagram LinkedIn
+YouTube Facebook WhatsApp
+Facebook TikTok WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp LinkedIn Pinterest
+Facebook Instagram YouTube
+Other(specify)
+Other(specify)
+Facebook TikTok YouTube
+TikTok Instagram Facebook WhatsApp
+WhatsApp TikTok YouTube Facebook Instagram Twitter (X) Thread Pinterest
+Instagram TikTok WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp Telegram
+Instagram TikTok
+YouTube Facebook Instagram TikTok WhatsApp
+WhatsApp
+Instagram Facebook TikTok Other(specify) Pinterest WhatsApp
+Other(specify)
+YouTube Facebook
+YouTube Facebook
+WhatsApp
+TikTok Instagram WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Telegram LinkedIn Pinterest
+Instagram YouTube TikTok Facebook WhatsApp LinkedIn Twitter (X) Pinterest Telegram Thread
+TikTok YouTube Instagram Facebook WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp Telegram
+YouTube Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram LinkedIn
+YouTube Facebook Instagram TikTok WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp
+Instagram YouTube TikTok Twitter (X) WhatsApp Pinterest
+YouTube Instagram TikTok Twitter (X) WhatsApp Pinterest
+Other(specify)
+Other(specify)
+WhatsApp
+YouTube Facebook TikTok WhatsApp
+YouTube Facebook LinkedIn WhatsApp Instagram
+Instagram Facebook TikTok
+Facebook Instagram Other(specify) TikTok WhatsApp YouTube
+Facebook Instagram TikTok
+Other(specify)
+Other(specify)
+WhatsApp
+Facebook YouTube Instagram TikTok Twitter (X) WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Other(specify)
+YouTube Instagram TikTok WhatsApp
+LinkedIn WhatsApp Facebook
+TikTok Instagram WhatsApp
+Facebook WhatsApp
+Instagram TikTok YouTube
+Facebook Instagram Twitter (X) LinkedIn TikTok
+Twitter (X)
+YouTube
+Facebook WhatsApp
+TikTok Instagram
+WhatsApp
+TikTok Twitter (X) WhatsApp
+Facebook Instagram
+YouTube Facebook
+YouTube Facebook Instagram TikTok WhatsApp
+Other(specify)
+YouTube TikTok
+YouTube Facebook Instagram TikTok WhatsApp
+Other(specify)
+Other(specify)
+Facebook WhatsApp
+WhatsApp
+LinkedIn Other(specify)
+TikTok WhatsApp
+LinkedIn
+Facebook Instagram WhatsApp TikTok
+WhatsApp TikTok Instagram
+YouTube Facebook Instagram TikTok WhatsApp
+Facebook WhatsApp
+Instagram TikTok
+WhatsApp
+Instagram Other(specify)
+WhatsApp
+YouTube Facebook TikTok Instagram WhatsApp
+TikTok YouTube Facebook Instagram
+YouTube Facebook TikTok Twitter (X) WhatsApp
+TikTok
+Facebook WhatsApp
+TikTok Telegram Facebook YouTube
+YouTube Facebook Instagram Twitter (X)
+YouTube Instagram Facebook TikTok Twitter (X) WhatsApp
+YouTube Twitter (X) Facebook Instagram
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp Telegram LinkedIn
+Other(specify)
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp
+YouTube Facebook Instagram WhatsApp
+Other(specify)
+Facebook Instagram WhatsApp
+Facebook WhatsApp Instagram
+TikTok Facebook Instagram WhatsApp
+TikTok
+Facebook
+YouTube TikTok Instagram
+LinkedIn
+Other(specify)
+TikTok Facebook Instagram
+YouTube Facebook
+Facebook TikTok WhatsApp
+Facebook Instagram TikTok WhatsApp
+Facebook WhatsApp
+TikTok Instagram WhatsApp Telegram LinkedIn Pinterest Thread Twitter (X) Facebook
+Instagram TikTok
+Facebook YouTube
+TikTok
+Other(specify)
+YouTube WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Twitter (X) Thread
+Facebook WhatsApp
+Facebook Instagram TikTok YouTube
+Facebook TikTok WhatsApp YouTube
+YouTube Facebook Instagram WhatsApp Telegram
+YouTube Facebook Instagram TikTok WhatsApp
+YouTube TikTok Instagram WhatsApp
+YouTube Facebook TikTok Instagram WhatsApp
+YouTube Facebook WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Thread
+Instagram WhatsApp YouTube
+WhatsApp Facebook
+TikTok Facebook
+YouTube TikTok Instagram Facebook WhatsApp Telegram
+Instagram Facebook YouTube TikTok Twitter (X) WhatsApp Telegram
+Instagram TikTok Facebook YouTube Thread WhatsApp LinkedIn Pinterest
+YouTube TikTok WhatsApp Facebook
+Facebook Instagram Telegram WhatsApp YouTube
+Instagram Facebook
+YouTube Facebook Instagram TikTok WhatsApp
+Facebook TikTok Instagram
+Facebook
+YouTube TikTok Facebook
+Facebook LinkedIn
+Facebook Instagram TikTok Twitter (X) WhatsApp
+YouTube Facebook Instagram WhatsApp
+WhatsApp Instagram TikTok Facebook YouTube Twitter (X) Telegram
+YouTube Facebook Twitter (X) Instagram
+Other(specify)
+Instagram WhatsApp
+Facebook YouTube
+WhatsApp
+YouTube Facebook
+YouTube Facebook
+Instagram Twitter (X) Telegram WhatsApp
+YouTube TikTok Facebook WhatsApp
+YouTube Facebook TikTok
+Facebook TikTok Instagram
+YouTube Instagram TikTok Facebook WhatsApp LinkedIn
+YouTube Facebook Instagram TikTok WhatsApp Telegram
+Facebook WhatsApp TikTok
+Facebook TikTok WhatsApp YouTube
+YouTube Facebook Instagram TikTok WhatsApp
+Facebook YouTube TikTok Instagram WhatsApp
+Facebook YouTube TikTok WhatsApp
+YouTube Facebook Instagram TikTok Telegram WhatsApp
+YouTube Facebook Instagram TikTok WhatsApp Telegram
+Facebook Instagram TikTok WhatsApp
+Facebook Instagram
+YouTube
+Instagram Facebook TikTok WhatsApp
+WhatsApp
+YouTube Facebook Instagram TikTok Twitter (X) WhatsApp
+Instagram Facebook
+Instagram YouTube WhatsApp Facebook
+Facebook WhatsApp YouTube
+TikTok Facebook
+LinkedIn
+YouTube Instagram Other(specify) Facebook LinkedIn Twitter (X) TikTok
+Facebook WhatsApp Instagram Telegram
+YouTube
+Facebook WhatsApp Other(specify) Twitter (X)
+YouTube Instagram TikTok Facebook WhatsApp Telegram
+Instagram Facebook Twitter (X) WhatsApp
+Facebook LinkedIn
+Instagram TikTok Facebook WhatsApp
+WhatsApp Facebook TikTok
+TikTok YouTube Facebook WhatsApp Other(specify)
+Other(specify)
+WhatsApp Other(specify)
+TikTok
+TikTok Instagram
+WhatsApp Facebook
+Instagram WhatsApp
+Facebook Instagram TikTok WhatsApp
+
+```

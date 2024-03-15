@@ -1,0 +1,478 @@
+/* custom fonts */
+@font-face {
+    font-family: NotoSerif;
+    src: url('/src/assets/fonts/NotoSerifDisplay-Regular.ttf');
+    font-weight: Regular 300;
+}
+
+@font-face {
+    font-family: NotoSerif;
+    src: url('/src/assets/fonts/NotoSerifDisplay-Medium.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: NotoSerif;
+    src: url('/src/assets/fonts/NotoSerifDisplay-Bold.ttf');
+    font-weight: 700;
+}
+
+/* default css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body{
+    font-weight: 400;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #6dccdc !important;
+    color: #252161 !important;
+    font-family: 'NotoSerif', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+nav.navbar{
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    z-index: 9999;
+    transition: 0.32 ease-in-out;
+    background-color: #9ce4f0fa !important;
+}
+
+nav.navbar.scrolled{
+    padding: 0px, 0;
+    background-color: #4cacc9;
+}
+
+nav.navbar a.navbar-branch{
+    width: 9%;
+}
+.navbar-brand img {
+    max-width: 100% !important; /* Ensure the image doesn't exceed the width of the navbar */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link,
+nav.navbar .navbar-nav .dropdown-toggle{
+    font-weight: 400;
+    color: #252161 !important;
+    letter-spacing: 0.8px;
+    padding: 0 25px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link:hover,
+nav.navbar .navbar-nav .nav-link.navbar-link.active{
+    opacity: 1;
+}
+span.navbar-text{
+    display: flex;
+    align-items: center;
+}
+.social-icon{
+    display: inline-block;
+    align-items: center;
+}
+.social-icon a{
+    width: 42px;
+    height: 42px;
+    background: #252161;
+    display: inline-flex;
+    border-radius: 50%;
+    margin-right: 6px;
+    align-items: center;
+    line-height: 1;
+    border: 1px solid darkblue;
+}
+.social-icon a::before{
+    content: "";
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    background: #6dccdc;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(90%) hue-rotate(346deg) brightness(50%);
+}
+
+.navbar-text button{
+    font-weight: 700;
+    color: #6dccdc;
+    border: 1px solid aliceblue;
+    padding: 18px 34px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+
+.navbar-text button span{
+    z-index: 1;
+}
+.navbar-text button::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-text button:hover{
+    color:#252161;
+}
+
+.navbar-text button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+nav.navbar .navbar-toggle:active,
+nav.navbar .navbar-toggle:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+nav.navbar .navbar-toggle-icon{
+    width: 24px;
+    height: 17px;
+    background-image: none;
+    position: relative;
+    border-bottom: 1px solid aliceblue;
+    transition: all 300ms linear;
+    top: 2px;
+}
+
+nav.navbar .navbar-toggle-icon:focus{
+    border-bottom: 1px solid aliceblue;
+}
+
+nav.navbar .navbar-toggle-icon::after,
+nav.navbar .navbar-toggle-icon::before{
+    width: 24px;
+    position: absolute;
+    height: 24px;
+    background-color: #4cacc9;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: 2;
+    transition: all 300ms linear;
+}
+nav.navbar .navbar-toggle-icon::after{
+    top: 8px;
+}
+nav.navbar .navbar-toggle-icon[aria-expanded = "true"] .navbar-toggle-icon::after{
+    transform: rotate(45deg);
+    background-color: aliceblue;
+    height: 2px;
+}
+nav.navbar .navbar-toggle-icon[aria-expanded = "true"] .navbar-toggle-icon::before{
+    transform: translate(8px) rotate(-45deg);
+    background-color: aliceblue;
+    height: 2px;
+}
+nav.navbar .navbar-toggle-icon[aria-expanded = "true"] .navbar-toggle-icon{
+    border-color: transparent;
+}
+
+
+button{
+    border-color: #f7931d !important;
+    color:#f7931d !important;
+}
+
+button:hover{
+    color: #252161 !important;
+    background-color: #f7931d !important;
+}
+
+
+
+/* navbar drop down */
+.navbar-collapse {
+    overflow-x: hidden; /* Remove side scrollbar */
+    background-color: transparent; /* Set background color */
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #4cacc9 !important; /* Background color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Remove border-radius */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    font-weight: 400;
+    color: #252161; /* Text color */
+    font-size: 14px; /* Font size */
+    letter-spacing: 0.8px; /* Letter spacing */
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out; /* Transition */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar-nav .dropdown-menu .dropdown-item.active {
+    opacity: 1; /* Hover opacity */
+    background-color: #f7931d; /* Hover background color */
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem; /* Padding */
+    clear: both;
+    font-weight: 400;
+    color: #252161; /* Text color */
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent; /* Background color */
+    border: 0; /* Remove border */
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #252161; /* Hover text color */
+    text-decoration: none; /* Remove underline */
+    background-color: #f7931d; /* Hover background color */
+}
+
+
+/* Banner */
+.banner{
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    /* background-image: url('./assets/images/banner_bg_jeremy_bishop.jpg'); */
+    height: auto;
+    min-height: 100vh;
+    width: auto;
+    min-width: 100vw;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-color: rgba(253, 246, 246, 0.3);
+    /* color: #0d0a34; */
+}
+
+.banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    /* Adjust the alpha value (0.8) to increase opacity */
+    /* background: linear-gradient(90.21deg, rgba(247, 147, 29, 0.8) -5.91%, rgba(109, 204, 220, 0.8), rgba(77, 70, 177, 0.8)) 10%; */
+    border: none;
+    border-radius: 20px;
+    font-size: 26px;
+    margin-bottom: 16px;
+    display: inline-block;
+    color: #17153c;
+}
+
+.banner h1{
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    color: #252161;
+}
+
+.banner p{
+    color: #252161;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    width: 96%;  
+}
+
+.banner button {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    color: #f7931d;
+    background-color: #252161;
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    height: 60px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.banner button:hover {
+    background-color: #f7931d;
+    color: #252161;
+}
+
+.banner button svg {
+    font-size: 25px;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+}
+.banner img{
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown{
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
+
+.txt-rotate > .wrap{
+    border-right: 0.08em solid aliceblue;
+}
+
+
+/* trending */
+.trending{
+    padding: 0 0 50px 0;
+    position: relative;
+    background-color: #4cacc9;
+    border-radius: 35px;
+    margin: -45px 10px 0 10px;
+    width: auto;
+    min-width: 95vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+.trending .trending-head h2{
+    text-align: center;
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 45px;
+}
+
+.trending p{
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
+}
+
+.trending .row{
+    height: 400px;
+}
+
+.trending .row h5{
+    text-align: start;
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+.trending .row p{
+    text-align: start;
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.trending .row img{
+    height: 300px;
+    margin-right: 0;
+}
+
+.trending .carousel-item {
+    position: relative;
+  }
+
+
+.trending .carousel-item .btn {
+    position: absolute;
+    font-size: 25px;
+    border-radius: 20px;
+    color: #17153c !important;
+    bottom: 10px;
+    width: 200px;
+    height: 50px;
+    right: 150px;
+  }
+
+
+/* topics */
+.topic{
+    margin: 10px 25% 15px 25%;
+    /* margin-bottom: 15px; */
+    display: flex;
+    align-items: center;
+}
+
+.topic button{
+    margin-left: 15px;
+    font-weight: 400;
+    height: 60px;
+    width: 200px;
+    display: block;
+    align-items: flex-end;
+    background-color: #fac487;
+    border: 1px solid #f7931d;
+    color: #252161 !important;
+}
+
+.topic button:hover{
+    background-color: #383477 !important;
+    border: 1px solid #383477 !important;
+    color: #f7931d !important;
+}
+
+.topics .content{
+    margin: 0 10px 15px 25px !important;
+    background-color: #6dccdc;
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #4cacc9 ;
+    box-shadow: 10px 6px #4cacc9;
+    width: 95% !important;
+}
+
+.topics .col-3{
+    margin-left: 0 !important;
+}
+
+.topics img{
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none;
+    border-radius: 1px;
+}

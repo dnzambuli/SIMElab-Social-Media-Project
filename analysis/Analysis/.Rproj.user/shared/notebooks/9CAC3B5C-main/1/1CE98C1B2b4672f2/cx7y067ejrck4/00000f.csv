@@ -1,0 +1,3 @@
+"0","library(readxl)"
+"0","content_creator <- read_excel(""07 03 2024 Social Media Information.xlsx"")"
+"0","View(content_creator)"
