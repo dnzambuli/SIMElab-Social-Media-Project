@@ -1,0 +1,51 @@
+@font-face {
+  font-family: EncodeSans;
+  src: url('/src/assets/fonts/EncodeSansExpanded-Light.ttf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: EncodeSans;
+  src: url('/src/assets/fonts/EncodeSansExpanded-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: EncodeSans;
+  src: url('/src/assets/fonts/EncodeSansExpanded-Medium.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: EncodeSans;
+  src: url('/src/assets/fonts/EncodeSansExpanded-Bold.ttf');
+  font-weight: 700;
+}
+
+body{
+  background-color: #252161;
+  font-family: EncodeSans sans-serif 300;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  letter-spacing: 3px;
+
+}
+
+/* navbar */
+Nav .navbar .bg-lblue{
+  background-color: #6dccdc;
+  color: #f0f8ff;
+}
+
+Button .custom-button,
+Button .custom-button .sign-in {
+  color: #f7931d; /* Text color */
+  border: 1px solid #6dccdc; /* Border color and width */
+  background-color: none; /* Background color */
+  gap: 3;
+}
+
+Button .custom-button:hover, .custom-button:focus,
+Button .custom-button .sign-up {
+  color: #252161; /* Text color on hover/focus */
+  background-color: #f7931d; /* Background color on hover/focus */
+  border: 1px solid hsla(32, 93%, 54%, 0.658); /* Border color on hover/focus */
+}
