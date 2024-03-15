@@ -1,18 +1,17 @@
-import { Button, Container } from "react-bootstrap";
-
 function CustomJumbo() {
   return (
     <>
-      <Container className="jumbo" id="#">
-        <div>
+      <div className="jumbo" id="#">
+        <div className="jumbo-left">
           <h1>Welcome to Habari Habour</h1>
           <h3>Plot your Course to Popularity:</h3>
           <p>
-            Explore trends, <span>Uncover New Waves</span>, Sail to Social
-            Supremacy
+            "Explore trends",{" "}
+            <span className="jumbo-left-highlight">"Uncover New Waves"</span>,
           </p>
-          <Button className="btn btn-lg custom-button">Sign Up</Button>
-          <Button className="btn btn-lg custom-button">Log In</Button>
+          <p>"Sail to Social Supremacy"</p>
+          <button className="btn-lg custom-button">Sign Up</button>
+          <button className="btn-lg custom-button">Log In</button>
         </div>
         <div className="jumbo-search">
           <form>
@@ -23,16 +22,13 @@ function CustomJumbo() {
                 placeholder="Find a Topic of your choice"
                 aria-label="Search"
               />
-              <Button
-                className="btn jumbo-btn custom-button my-2 my-sm-0"
-                type="submit"
-              >
+              <button className="custom-button" type="submit">
                 Search
-              </Button>
+              </button>
             </div>
           </form>
         </div>
-      </Container>
+      </div>
     </>
   );
 }

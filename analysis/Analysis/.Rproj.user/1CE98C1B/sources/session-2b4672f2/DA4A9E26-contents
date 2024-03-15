@@ -105,27 +105,26 @@ Social_media_accounts = c("YouTube Instagram Facebook TikTok WhatsApp","YouTube"
 "YouTube",
 "Facebook Instagram Twitter(X) TikTok WhatsApp LinkedIn OtherPinterest",
 "YouTube Facebook Instagram TikTok Thread Twitter (X) WhatsApp Telegram LinkedIn",
-Instagram
-WhatsApp LinkedIn
-YouTube Facebook WhatsApp Instagram TikTok
-Instagram
-YouTube Instagram TikTok Twitter (X) WhatsApp
-Twitter (X) Facebook Instagram Telegram WhatsApp LinkedIn
-Facebook Instagram TikTok Twitter (X) Thread WhatsApp Telegram Pinterest
-YouTube Facebook Instagram Telegram
-YouTube Facebook Instagram Twitter (X)
-TikTok Facebook Instagram YouTube WhatsApp
-Instagram Twitter (X) TikTok
-Other(specify)
-YouTube
-YouTube
-Twitter (X) Facebook TikTok
-Instagram TikTok WhatsApp
-Twitter (X) Facebook WhatsApp YouTube LinkedIn Pinterest
-Instagram
-WhatsApp YouTube Facebook Instagram TikTok
-WhatsApp
-TikTok Facebook Instagram
+"Instagram",
+"WhatsApp LinkedIn",
+"YouTube Facebook WhatsApp Instagram TikTok",
+"Instagram",
+"YouTube Instagram TikTok Twitter(X) WhatsApp",
+"Twitter(X) Facebook Instagram Telegram WhatsApp LinkedIn",
+"Facebook Instagram TikTok Twitter(X) Thread WhatsApp Telegram Pinterest",
+"YouTube Facebook Instagram Telegram",
+"YouTube Facebook Instagram Twitter(X)",
+"TikTok Facebook Instagram YouTube WhatsApp",
+"Instagram Twitter(X) TikTok", "Other",
+"YouTube",
+"YouTube",
+"Twitter(X) Facebook TikTok",
+"Instagram TikTok WhatsApp",
+"Twitter(X) Facebook WhatsApp YouTube LinkedIn Pinterest",
+"Instagram",
+"WhatsApp YouTube Facebook Instagram TikTok",
+"WhatsApp",
+"TikTok Facebook Instagram",
 Instagram YouTube
 Other(specify)
 WhatsApp
@@ -478,58 +477,58 @@ Instagram Facebook
 YouTube Facebook Instagram TikTok WhatsApp
 Facebook TikTok Instagram
 Facebook
-YouTube TikTok Facebook
-Facebook LinkedIn
-Facebook Instagram TikTok Twitter (X) WhatsApp
-YouTube Facebook Instagram WhatsApp
-WhatsApp Instagram TikTok Facebook YouTube Twitter (X) Telegram
-YouTube Facebook Twitter (X) Instagram
-Other(specify)
-Instagram WhatsApp
-Facebook YouTube
-WhatsApp
-YouTube Facebook
-YouTube Facebook
-Instagram Twitter (X) Telegram WhatsApp
-YouTube TikTok Facebook WhatsApp
-YouTube Facebook TikTok
-Facebook TikTok Instagram
-YouTube Instagram TikTok Facebook WhatsApp LinkedIn
-YouTube Facebook Instagram TikTok WhatsApp Telegram
-Facebook WhatsApp TikTok
-Facebook TikTok WhatsApp YouTube
-YouTube Facebook Instagram TikTok WhatsApp
-Facebook YouTube TikTok Instagram WhatsApp
-Facebook YouTube TikTok WhatsApp
-YouTube Facebook Instagram TikTok Telegram WhatsApp
-YouTube Facebook Instagram TikTok WhatsApp Telegram
-Facebook Instagram TikTok WhatsApp
-Facebook Instagram
-YouTube
-Instagram Facebook TikTok WhatsApp
-WhatsApp
-YouTube Facebook Instagram TikTok Twitter (X) WhatsApp
-Instagram Facebook
-Instagram YouTube WhatsApp Facebook
-Facebook WhatsApp YouTube
-TikTok Facebook
-LinkedIn
-YouTube Instagram Other(specify) Facebook LinkedIn Twitter (X) TikTok
-Facebook WhatsApp Instagram Telegram
-YouTube
-Facebook WhatsApp Other(specify) Twitter (X)
-YouTube Instagram TikTok Facebook WhatsApp Telegram
-Instagram Facebook Twitter (X) WhatsApp
-Facebook LinkedIn
-Instagram TikTok Facebook WhatsApp
-WhatsApp Facebook TikTok
-TikTok YouTube Facebook WhatsApp Other(specify)
-Other(specify)
-WhatsApp Other(specify)
-TikTok
-TikTok Instagram
-WhatsApp Facebook
-Instagram WhatsApp
-Facebook Instagram TikTok WhatsApp
-
+"YouTube TikTok Facebook
+","Facebook LinkedIn
+","Facebook Instagram TikTok Twitter(X) WhatsApp
+","YouTube Facebook Instagram WhatsApp
+","WhatsApp Instagram TikTok Facebook YouTube Twitter(X) Telegram
+","YouTube Facebook Twitter(X) Instagram
+","Other
+","Instagram WhatsApp
+","Facebook YouTube
+","WhatsApp
+","YouTube Facebook
+","YouTube Facebook
+","Instagram Twitter(X) Telegram WhatsApp
+","YouTube TikTok Facebook WhatsApp
+","YouTube Facebook TikTok
+","Facebook TikTok Instagram
+","YouTube Instagram TikTok Facebook WhatsApp LinkedIn
+","YouTube Facebook Instagram TikTok WhatsApp Telegram
+","Facebook WhatsApp TikTok
+","Facebook TikTok WhatsApp YouTube
+","YouTube Facebook Instagram TikTok WhatsApp
+","Facebook YouTube TikTok Instagram WhatsApp
+","Facebook YouTube TikTok WhatsApp
+","YouTube Facebook Instagram TikTok Telegram WhatsApp
+","YouTube Facebook Instagram TikTok WhatsApp Telegram
+","Facebook Instagram TikTok WhatsApp
+","Facebook Instagram
+","YouTube",
+"Instagram Facebook TikTok WhatsApp
+","WhatsApp
+","YouTube Facebook Instagram TikTok Twitter(X) WhatsApp
+","Instagram Facebook
+","Instagram YouTube WhatsApp Facebook
+","Facebook WhatsApp YouTube
+","TikTok Facebook
+","LinkedIn
+","YouTube Instagram Other(specify) Facebook LinkedIn Twitter (X) TikTok
+","Facebook WhatsApp Instagram Telegram
+","YouTube",
+"Facebook WhatsApp Other Twitter(X)
+","YouTube Instagram TikTok Facebook WhatsApp Telegram
+","Instagram Facebook Twitter(X) WhatsApp
+","Facebook LinkedIn
+","Instagram TikTok Facebook WhatsApp
+","WhatsApp Facebook TikTok
+","TikTok YouTube Facebook WhatsApp Other
+","Other",
+"WhatsApp Other",
+"TikTok",
+"TikTok Instagram",
+"WhatsApp Facebook",
+"Instagram WhatsApp",
+"Facebook Instagram TikTok WhatsApp"
+)
 ```

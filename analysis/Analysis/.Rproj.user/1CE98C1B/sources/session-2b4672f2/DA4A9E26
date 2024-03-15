@@ -3,7 +3,7 @@
     "path": "C:/Users/ADMIN/Documents/hh-3/analysis/Analysis/main.Rmd",
     "project_path": "main.Rmd",
     "type": "r_markdown",
-    "hash": "1103344523",
+    "hash": "3499342725",
     "contents": "",
     "dirty": true,
     "created": 1710502071042.0,
@@ -20,14 +20,14 @@
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2871:2598.666748046875"
+        "rmdVisualModeLocation": "13739:8854"
     },
     "folds": "",
     "lastKnownWriteTime": 1710502093,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1710507286647,
+    "last_content_update": 1710511717692,
     "read_only": false,
     "read_only_alternatives": []
 }

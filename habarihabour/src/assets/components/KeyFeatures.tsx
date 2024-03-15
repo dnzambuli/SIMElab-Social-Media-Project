@@ -6,7 +6,7 @@ import keyImg3 from "../images/keycard3.png";
 function Features() {
   return (
     <>
-      <div className="row" id="KeyFeatures">
+      <div className="features" id="keyFeatures">
         <h2>Key Features</h2>
         <div className="card-deck">
           <div className="card col-2">
