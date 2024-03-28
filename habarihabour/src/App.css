@@ -215,6 +215,11 @@ a{
   text-align: center;
 }
 
+/* data */
+.data{
+  height: 100vh;
+  min-width: 50px;
+}
 /* contact */
 .contact-container{
   margin: 20px 80px;
@@ -225,7 +230,8 @@ a{
   display: grid;
   grid-template-columns: 40% auto;
   padding: 10px 10px;
-  height: 500px;
+  height: 100vh;
+  min-height: auto;
 }
 
 .contact-container h2{

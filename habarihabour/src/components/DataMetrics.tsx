@@ -9,7 +9,7 @@ function Data() {
     const fetchData = async () => {
       if (searchTerm) {
         try {
-          const response = await axios.post("http://localhost:5174/search", {
+          const response = await axios.post("http://localhost:5173/", {
             name: searchTerm,
           });
           setResults(response.data);
@@ -25,7 +25,7 @@ function Data() {
   return (
     <div>
       {results.map((result, index) => (
-        <div key={index} className="card">
+        <div key={index} className="card data" id="data">
           <div className="card-body">
             <h5 className="card-title">{result.title}</h5>
             <p className="card-text">{result.description}</p>

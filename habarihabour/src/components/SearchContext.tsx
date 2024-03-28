@@ -30,10 +30,9 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<any[]>(defaultContextValue.results);
   const performSearch = async (term: string) => {
+    const apiUrl = "http://localhost:5173/";
     try {
-      const response = await axios.post("http://localhost:5174/search", {
-        name: term,
-      });
+      const response = await axios.post(apiUrl, { name: term });
       setResults(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

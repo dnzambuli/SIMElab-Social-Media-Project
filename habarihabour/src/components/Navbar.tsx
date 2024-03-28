@@ -64,7 +64,10 @@ function CustomNavbar() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => setLogin(false)}>
-                    <a className="btn-sm custom-button" href="#logOut">
+                    <a
+                      className="btn rounded-5 btn-sm custom-button"
+                      href="#logOut"
+                    >
                       Log Out
                     </a>
                   </NavDropdown.Item>
@@ -72,12 +75,18 @@ function CustomNavbar() {
               ) : (
                 <>
                   <NavDropdown.Item onClick={() => setLogin(true)}>
-                    <a className="btn-sm custom-button" href="#logIn">
+                    <a
+                      className="btn rounded-5 btn-outline-warning btn-sm custom-button"
+                      href="#logIn"
+                    >
                       Log in
                     </a>
                   </NavDropdown.Item>
                   <NavDropdown.Item onClick={() => setLogin(true)}>
-                    <a className="btn-sm custom-button" href="#signUp">
+                    <a
+                      className="btn rounder-5 btn-sm custom-button"
+                      href="#signUp"
+                    >
                       Sign Up
                     </a>
                   </NavDropdown.Item>
