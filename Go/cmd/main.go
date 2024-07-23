@@ -7,7 +7,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"my_project/go/pkg/extractor"
+	"https://github.com/dnzambuli/SIMElab-Social-Media-Project/Go/pkg/extractor/"
 )
 
 func main() {
@@ -22,6 +22,10 @@ func main() {
 	}
 	defer client.Disconnect(ctx)
 
+	searchTerm := "news"
+
 	// Call the scraper function
 	extractor.ScrapeGhafla(ctx, client)
+	extractor.ScrapePulseLive(ctx, client, searchTerm)
+	extractor.ScrapeKiss100(ctx, client, searchTerm)
 }
