@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.data_extraction.extractor import extract_data
+from app.data_extraction.extraction import extract_data
 
 data_api = Blueprint('data_api', _name_)
 

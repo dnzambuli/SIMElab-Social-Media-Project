@@ -71,8 +71,8 @@ def kiss_data(name):
         for result in search_results:
             title_tag = result.find("p", {"class": "title"})
             title = title_tag.text.strip() if title_tag else "No title"
-            desc_tag = result.find("p")
-            description = desc_tag.text.strip() if desc_tag else "No Description"
+            desc_tag = result.find_all("p")
+            description = desc_tag[1].text.strip() if len(desc_tag) > 1 else "No Description"
             img_tag = result.find('img')
             image = img_tag['src'] if img_tag else "No Image"
             link = result.find("a")["href"]
@@ -85,7 +85,8 @@ def kiss_data(name):
     except Exception as e:
         return {"error": str(e)}
 
-def extract_data(name):
+
+def extract_data(name, mongo_client):
     kiss_results = kiss_data(name)
     pulse_results = pulse_data(name)
     ghafla_results = ghafla_data(name)
@@ -97,6 +98,8 @@ def extract_data(name):
     }
     
     # Save results to MongoDB
+    db = mongo_client['creative_hub']
+    collection = db['extracted_data']
     collection.insert_one({
         "name": name,
         "results": results

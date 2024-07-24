@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from app.data_extraction.extraction import ghafla_data, pulse_data, kiss_data
+from app.data_extraction.extraction import ghafla_data, pulse_data, kiss_data, extract_data
+import mongomock
 
 class TestExtraction(unittest.TestCase):
 
@@ -71,6 +72,22 @@ class TestExtraction(unittest.TestCase):
         self.assertEqual(results[0]['description'], 'No Description')
         self.assertEqual(results[0]['link'], 'http://example.com')
         self.assertEqual(results[0]['time'], 'No Time')
+
+    def test_extract_data_mongo(self):
+        # Use mongomock to mock MongoDB
+        mongo_client = mongomock.MongoClient()
+
+        name = 'test'
+        results = extract_data(name, mongo_client)
+
+        # Verify the data is inserted into MongoDB
+        db = mongo_client['creative_hub']
+        collection = db['extracted_data']
+        inserted_data = collection.find_one({"name": name})
+
+        self.assertIsNotNone(inserted_data)
+        self.assertEqual(inserted_data['name'], name)
+        self.assertIn('results', inserted_data)
 
 if __name__ == '__main__':
     unittest.main()
